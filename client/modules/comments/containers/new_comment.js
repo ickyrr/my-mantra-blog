@@ -4,7 +4,7 @@ import NewComment from '../components/new_comment.jsx';
 
 
 export const composer = ({context}, onData) => {
-  const {Meteor, Collections} = context();
+  // const {Meteor, Collections} = context();
   onData(null, {});
 };
 

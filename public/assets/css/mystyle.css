@@ -1,0 +1,13 @@
+#login-page {
+    display: table;
+    margin: auto;
+    width: 25%;
+}
+
+.margin {
+  margin: 0 !important;
+}
+
+.icon-teal {
+  color: #26A69A;
+}

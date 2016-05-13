@@ -19,6 +19,7 @@ class Register extends React.Component {
     const {error} = this.props;
     return (
       <div className="row">
+        <h2>Register new account</h2>
         {error ? error : 'no error'}
         <form className="col s12" onSubmit={this._newUser.bind(this)}>
           <div className="row">

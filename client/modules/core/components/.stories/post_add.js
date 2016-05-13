@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import PostAdd from '../post_add.jsx';
+import PostAdd from '../postadd.jsx';
 
 storiesOf('core.PostAdd', module)
   .add('default view', () => {

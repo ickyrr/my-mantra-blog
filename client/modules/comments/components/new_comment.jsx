@@ -11,6 +11,7 @@ class NewComment extends React.Component {
     const {addComment, postId} = this.props;
     const {commentInput} = this.refs;
     addComment(postId, commentInput.value);
+    commentInput.value = '';
   }
 
   render() {

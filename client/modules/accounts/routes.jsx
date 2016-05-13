@@ -1,17 +1,27 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
-import MainLayout from '/client/modules/core/components/main_layout.jsx';
+import AccountsLayout from '/client/modules/accounts/components/accounts_layout.jsx';
 import Register from './components/register.jsx';
+import Login from './components/login.jsx';
 
 export default function (injectDeps, {FlowRouter}) {
-  const MainLayoutCtx = injectDeps(MainLayout);
+  const AccountsLayoutCtx = injectDeps(AccountsLayout);
 
   FlowRouter.route('/register', {
     name: 'register',
     action() {
-      mount(MainLayoutCtx, {
+      mount(AccountsLayoutCtx, {
         content: () => (<Register />)
+      });
+    }
+  });
+
+  FlowRouter.route('/login', {
+    name: 'login',
+    action() {
+      mount(AccountsLayoutCtx, {
+        content: () => (<Login />)
       });
     }
   });
