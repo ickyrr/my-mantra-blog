@@ -21,3 +21,6 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 kadira:flow-router
 jagi:astronomy
+accounts-ui
+accounts-password
+accounts-base

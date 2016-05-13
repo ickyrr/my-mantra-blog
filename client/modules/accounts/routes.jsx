@@ -2,7 +2,7 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import AccountsLayout from '/client/modules/accounts/components/accounts_layout.jsx';
-import Register from './components/register.jsx';
+import Register from './containers/register.js';
 import Login from './components/login.jsx';
 
 export default function (injectDeps, {FlowRouter}) {

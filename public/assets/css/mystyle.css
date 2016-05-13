@@ -1,9 +1,13 @@
-#login-page {
+.form-custom {
     display: table;
-    margin: auto;
+    margin: auto !important;
+}
+.form-custom.register {
+    width: 50%;
+}
+.form-custom.login {
     width: 25%;
 }
-
 .margin {
   margin: 0 !important;
 }

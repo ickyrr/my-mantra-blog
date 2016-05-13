@@ -7,7 +7,6 @@ import PostList from './containers/post_list.js';
 import PostAdd from './containers/postadd.js';
 import Contact from './components/contact.jsx';
 import ThePost from './containers/the_post.js';
-import NewComment from '../comments/containers/new_comment.js';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
