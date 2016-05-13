@@ -1,5 +1,4 @@
 import Post from '/lib/collections/posts.js';
-import {ReactiveVar} from 'meteor/reactive-var';
 
 export default {
   create({Meteor, LocalState, FlowRouter}, title, content) {
