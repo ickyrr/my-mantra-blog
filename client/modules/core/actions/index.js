@@ -1,5 +1,5 @@
-import posts from './posts';
+import new_post from './new_post';
 
 export default {
-  posts
+  new_post
 };

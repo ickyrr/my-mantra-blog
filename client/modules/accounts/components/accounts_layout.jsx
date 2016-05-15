@@ -1,8 +1,8 @@
 import React from 'react';
 
 const AccountsLayout = ({content = () => null}) => (
-  <div className="container">
-    <div>
+  <div>
+    <div className="container">
       {content()}
     </div>
   </div>

@@ -1,9 +1,10 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
-import AccountsLayout from '/client/modules/accounts/components/accounts_layout.jsx';
+import AccountsLayout from './components/accounts_layout.jsx';
+
 import Register from './containers/register.js';
-import Login from './components/login.jsx';
+import Login from './containers/login.js';
 
 export default function (injectDeps, {FlowRouter}) {
   const AccountsLayoutCtx = injectDeps(AccountsLayout);

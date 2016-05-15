@@ -1,12 +1,13 @@
 import React from 'react';
+
 import Navigation from './navigation.jsx';
 
 const Layout = ({content = () => null }) => (
-  <div className="container">
+  <div>
     <header>
       <Navigation />
     </header>
-    <div>
+    <div className="container">
       {content()}
     </div>
   </div>

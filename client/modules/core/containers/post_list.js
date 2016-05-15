@@ -4,10 +4,8 @@ import PostList from '../components/post_list.jsx';
 import Post from '/lib/collections/posts.js';
 
 export const composer = ({context}, onData) => {
-  // const {Meteor, Collections} = context();
-
-  // // use the Astro Class instead of the actual collection
-  const posts = Post.find({}, {sort: {createdAt: -1} }).fetch();
+  const {Meteor, Collections} = context();
+  const posts = Post.find().fetch();
   onData(null, {posts});
 };
 

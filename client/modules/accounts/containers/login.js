@@ -1,19 +1,19 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
-import Register from '../components/register.jsx';
+import Login from '../components/login.jsx';
 
 export const composer = ({context}, onData) => {
   const {LocalState} = context();
-  const error = LocalState.get('REGISTRATION_ERROR');
+  const error = LocalState.get('LOGIN_ERROR');
   onData(null, {error});
 };
 
 export const depsMapper = (context, actions) => ({
-  register: actions.register.register,
+  login: actions.login.login,
   context: () => context
 });
 
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Register);
+)(Login);

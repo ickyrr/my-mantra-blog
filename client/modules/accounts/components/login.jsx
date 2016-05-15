@@ -1,13 +1,12 @@
 import React from 'react';
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleSubmit(event) {
     event.preventDefault();
-    console.log('logging in');
+    const {login} = this.props;
+    const {email,password} = this.refs;
+
+    login(email.value,password.value);
   }
 
   render() {
@@ -24,14 +23,14 @@ class Login extends React.Component {
             <div className="row margin">
               <div className="input-field col s12">
                 <i className="mdi-social-person-outline prefix"></i>
-                <input className="validate" id="email" type="email" />
+                <input className="validate" id="email" type="email" ref="email"/>
                 <label for="email" data-error="wrong" data-success="right">Email</label>
               </div>
             </div>
             <div className="row margin">
               <div className="input-field col s12">
                 <i className="mdi-action-lock-outline prefix"></i>
-                <input id="password" type="password" />
+                <input id="password" type="password" ref="password"/>
                 <label for="password">Password</label>
               </div>
             </div>

@@ -1,5 +1,7 @@
-import users from './users';
+import register from './register';
+import login from './login';
 
 export default {
-  users
+  register,
+  login
 };
