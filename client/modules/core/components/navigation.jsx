@@ -1,5 +1,8 @@
 import React from 'react';
+import {Meteor} from 'meteor/meteor';
+
 const currentUser = () => Meteor.userId();
+
 const Navigation = () => (
   <nav className="teal">
     <div className="nav-wrapper container">
@@ -10,9 +13,7 @@ const Navigation = () => (
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
-        {Meteor.userId() ? '' : loginOrRegister}
-
-
+        {currentUser ? '' : loginOrRegister}
       </ul>
     </div>
   </nav>

@@ -9,7 +9,7 @@ export default {
     LocalState.set('NEW_POST_ERROR', null);
 
     const post = new Post();
-
+    post.author = Meteor.userId();
     post.title = title;
     post.content = content;
 
