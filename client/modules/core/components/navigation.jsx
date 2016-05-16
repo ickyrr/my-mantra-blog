@@ -1,29 +1,55 @@
 import React from 'react';
 import {Meteor} from 'meteor/meteor';
 
-const currentUser = () => Meteor.userId();
+class Navigation extends React.Component {
+  logout(event) {
+    event.preventDefault();
+    const {FlowRouter} = this;
+    Meteor.logout(function (err) {
+      if (!err) {
+        FlowRouter.go('/login');
+      }
+    });
+  }
 
-const Navigation = () => (
-  <nav className="teal">
-    <div className="nav-wrapper container">
-      <a href="#" className="brand-logo">
-        <span><i className="large material-icons prefix">insert_chart</i>Blog</span>
-      </a>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        {currentUser ? '' : loginOrRegister}
-      </ul>
-    </div>
-  </nav>
-);
+  getUsername() {
+    console.log(Meteor.user());
+  }
 
-const loginOrRegister = () => (
-  <div>
-    <li><a href="/register">Register</a></li>
-    <li><a href="/login">Login</a></li>
-  </div>
-);
+  render() {
+    return (
+      <nav className="teal">
+        <div className="nav-wrapper container">
+          <a href="#" className="brand-logo">
+            <span><i className="large material-icons prefix">insert_chart</i></span>
+          </a>
+          {Meteor.userId() ?
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li>
+                <div className="chip">
+                  <img src="/images/no-image.png" />
+                </div>
+              </li>
+              <li>
+                <button className="btn waves-effect waves-light col s12"
+                    onClick={this.logout}>Logout</button>
+              </li>
+            </ul> :
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/register">Register</a></li>
+              <li><a href="/login">Login</a></li>
+            </ul>
+          }
+        </div>
+      </nav>
+    );
+  }
+}
 
 export default Navigation;

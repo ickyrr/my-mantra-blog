@@ -1,9 +1,7 @@
-import {Meteor} from 'meteor/meteor';
-
 export default {
   login({LocalState,FlowRouter},user,password) {
     if (!user || !password) {
-        return LocalState.set('LOGIN_ERROR', 'Please enter your credentials to login');
+      return LocalState.set('LOGIN_ERROR', 'Please enter your credentials to login');
     }
 
     LocalState.set('LOGIN_ERROR', null);

@@ -9,13 +9,41 @@
     width: 25%;
 }
 .margin {
-  margin: 0 !important;
+    margin: 0 !important;
 }
-
 .icon-teal {
-  color: #26A69A;
+    color: #26A69A;
 }
-
 .msg-error {
-  color: red;
+    color: red;
+}
+.post-featured-image {
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    position: relative;
+}
+#uploadPhoto {
+    position: absolute;
+    margin: auto;
+    opacity: 0;
+    z-index: 9;
+}
+#uploadPhoto,
+#uploadLabel {
+    position: absolute;
+    top: 43%;
+}
+#uploadLabel {
+    text-align: center;
+    color: #111;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    left: 0;
+    opacity: 0.5;
+    cursor: pointer;
+}
+#uploadLabel:hover {
+    opacity: 1;
 }

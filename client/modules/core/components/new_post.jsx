@@ -1,4 +1,5 @@
 import React from 'react';
+import Post from '/lib/collections/posts.js';
 
 class NewPost extends React.Component {
   handleSubmit(event) {
@@ -13,7 +14,9 @@ class NewPost extends React.Component {
 
   componentWillUnmount() {
     const {clearErrors} = this.props;
-    clearErrors();
+    if (clearErrors) {
+      clearErrors();
+    }
   }
 
   render() {
@@ -32,6 +35,14 @@ class NewPost extends React.Component {
             <div className="input-field col s12">
               <textarea ref="content" id="content"></textarea>
               <label for="content">Content</label>
+            </div>
+          </div>
+          <div className="row margin">
+            <div className="input-field col s12">
+              <div className="post-featured-image">
+                <input type="file" id="uploadPhoto" />
+                <label for="uploadPhoto" id="uploadLabel">Upload</label>
+              </div>
             </div>
           </div>
           <div className="row margin">

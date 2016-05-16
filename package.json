@@ -22,6 +22,7 @@
     "react-simple-di": "^1.0.1"
   },
   "devDependencies": {
+    "@ryancavanaugh/meteor-roles": "^1.2.13-alpha",
     "babel-core": "^6.8.0",
     "babel-plugin-react-require": "2.x.x",
     "babel-polyfill": "6.x.x",

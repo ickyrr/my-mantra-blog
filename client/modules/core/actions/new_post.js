@@ -1,4 +1,5 @@
 import Post from '/lib/collections/posts.js';
+import {Meteor} from 'meteor/meteor';
 
 export default {
   newPost({LocalState, FlowRouter},title, content) {
@@ -14,14 +15,15 @@ export default {
     post.content = content;
 
     post.validate({}, function (err) {
-      if(err) {
+      if (err) {
         return LocalState.set('NEW_POST_ERROR', err);
       }
 
-      post.save(function (err1) {
+      post.save(function (err1, postid) {
         if (err1) {
           return LocalState.set('NEW_POST_ERROR', err1);
         }
+        FlowRouter.go(`/post/${postid}`);
       });
     });
   },
@@ -29,4 +31,4 @@ export default {
   clearErrors({LocalState}) {
     return LocalState.set('NEW_POST_ERROR', null);
   }
-}
+};

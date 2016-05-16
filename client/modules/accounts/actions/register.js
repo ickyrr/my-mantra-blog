@@ -1,5 +1,4 @@
 import User from '/lib/collections/users.js';
-import {Meteor} from 'meteor/meteor';
 
 export default {
   register({LocalState, FlowRouter},firstname,lastname,password,emails) {

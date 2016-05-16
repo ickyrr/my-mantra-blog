@@ -11,12 +11,11 @@ class Login extends React.Component {
 
   render() {
     const {error} = this.props;
-
     return (
       <div id="login-page" className="row form-custom">
         <div className="col s12 z-depth-6 card-panel">
           <form className="login-form" onSubmit={this.handleSubmit.bind(this)}>
-            {error ? error : ''}
+            <p className="msg-error">{error ? error.reason : ''}</p>
             <div className="row">
               <div className="input-field col s12 center">
                 <i className="large material-icons icon-teal">insert_chart</i>
